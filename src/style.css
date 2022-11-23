@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-h1{
+/* h1{
   position: absolute;
   text-align: center;
   font-size: 40px;
@@ -17,4 +17,4 @@ h1{
   top: 50%;
   margin-top: -10px;
   text-align: center;
-}
+} */
