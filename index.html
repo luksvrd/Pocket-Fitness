@@ -1,28 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Pocket Fitness</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 
-
-<body>
-    <h1>Pocket Fitness</h1>
-
-<div class="container">
-  <div class="vertical-center">
-    <button>Let's Workout</button>
-  </div>
-</div>
-
-<!-- <style>
-    body {
-      background-image:
-    }
-    </style> -->
-
-</body>
+  <body>
+    <header
+      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden"
+    >
+      <div
+        class="relative z-30 rounded-xl bg-slate-300 bg-opacity-50 p-5 text-2xl text-yellow-300"
+      >
+        Pocket Fitness
+      </div>
+      <video
+        autoplay
+        loop
+        muted
+        class="absolute z-10 min-h-full w-auto min-w-full max-w-none"
+      >
+        <source
+          src="/Fitness Cinematic video _ Gym commercial _ Cinematic fitness film _ Fitness commercial.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <h2
+        class="relative z-30 border-2 border-blue-500 p-5 text-3xl text-yellow-300"
+      >
+        BE STRONG <br />
+        BE HEALTHY
+      </h2>
+      <h1
+        class="relative z-30 border-pink-500 p-5 text-center text-6xl text-yellow-300"
+      >
+        Pocket Fitness
+      </h1>
+    </header>
+    <div class="relative z-30 p-5">
+      <div class="text-center">
+        <button>Let's Workout</button>
+      </div>
+      <div class="flex flex-col gap-4 border-2 border-rose-500 text-center">
+        <h3>Are you a User?</h3>
+        <button type="button" id="userYes">Yes</button>
+        <button type="button" id="userNo">No</button>
+        <span
+          class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
+        >
+          Email
+        </span>
+        <input
+          type="text"
+          class="relative z-30 mt-1 block w-full rounded-md border border-slate-300 bg-white p-5 px-3 py-2 text-slate-700 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
+          placeholder="you@example.com"
+        />
+        <button type="button" id="userNameEnter">Enter Name</button>
+      </div>
+    </div>
+    <main
+      class="relative z-30 flex flex-col gap-4 border-2 border-rose-500 p-5 text-center"
+    >
+      <h1>Exercises</h1>
+      <button type="button" id="cardioBtn">Cardio</button>
+      <button type="button" id="plyoBtn">Plyos</button>
+      <button type="button" id="strengthBtn">Strength</button>
+      <button type="button" id="strongmanBtn">Strongman</button>
+      <h1>Difficulty</h1>
+      <button type="button" id="beginnerBtn">Beginner</button>
+      <button type="button" id="intermediateBtn">Intermediate</button>
+      <button type="button" id="expertBtn">Expert</button>
+      <h1>Time</h1>
+      <input type="text" id="time" placeholder="minutes" />
+      <h1>Number of Exercises</h1>
+      <input
+        type="text"
+        id="NumberExercises"
+        placeholder="Number of Exercises"
+      />
+      <button type="button" id="searchme">Create Workout!</button>
+    </main>
+    <script type="module" src="./src/index.js"></script>
+  </body>
 </html>
