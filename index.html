@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
 
     <title>Pocket Fitness</title>
   </head>
@@ -48,7 +52,6 @@
         Your browser does not support the video tag.
       </video>
     </header>
-    <!-- <div class="relative z-30 p-5"> -->
     <div
       id="lets-workout"
       class="border-1 m-20 flex flex-col items-center justify-center rounded-xl border-black bg-slate-300 p-5 py-2 px-4 text-center text-2xl font-bold text-black hover:bg-slate-400"
@@ -72,38 +75,160 @@
         class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
       >
         Email
-        <!-- class="mb-2 mt-1 block w-full rounded-md border border-slate-300 bg-white p-5 px-3 py-2 text-sm font-medium text-gray-900 placeholder-slate-400 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 dark:text-white sm:text-sm" -->
       </span>
       <input
         class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
         type="text"
-        placeholder="you@example.com"
+        placeholder="UserName"
       />
-      <button type="button" id="userNameEnter">Enter Name</button>
+      <button
+        type="button"
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        id="userNameEnter"
+      >
+        Enter Name
+      </button>
     </div>
-    <!-- </div> -->
     <main
       class="relative z-30 flex flex-col gap-4 border-2 border-rose-500 p-5 text-center"
     >
       <h1>Exercises</h1>
-      <button type="button" id="cardioBtn">Cardio</button>
-      <button type="button" id="plyoBtn">Plyos</button>
-      <button type="button" id="strengthBtn">Strength</button>
-      <button type="button" id="strongmanBtn">Strongman</button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="cardioBtn"
+      >
+        Cardio
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="plyoBtn"
+      >
+        Plyos
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="strengthBtn"
+      >
+        Strength
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="strongmanBtn"
+      >
+        Strongman
+      </button>
       <h1>Difficulty</h1>
-      <button type="button" id="beginnerBtn">Beginner</button>
-      <button type="button" id="intermediateBtn">Intermediate</button>
-      <button type="button" id="expertBtn">Expert</button>
-      <h1>Time</h1>
-      <input type="text" id="time" placeholder="minutes" />
-      <h1>Number of Exercises</h1>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="beginnerBtn"
+      >
+        Beginner
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="intermediateBtn"
+      >
+        Intermediate
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="expertBtn"
+      >
+        Expert
+      </button>
+      <span
+        class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
+      >
+        Time
+      </span>
       <input
+        class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
+        type="text"
+        id="time"
+        placeholder="minutes"
+      />
+      <span
+        class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
+      >
+        Number of Exercises
+      </span>
+      <input
+        class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
         type="text"
         id="NumberExercises"
         placeholder="Number of Exercises"
       />
-      <button type="button" id="searchme">Create Workout!</button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="searchme"
+      >
+        Create Workout!
+      </button>
     </main>
-    <script type="module" src="./src/index.js"></script>
+    <button
+      class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+      type="button"
+      id="startbutton"
+    >
+      Start
+    </button>
+    <ul></ul>
+    <article>
+      <p id="timer"></p>
+      <p id="Exercise"></p>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="exerciseInstructions"
+      >
+        Instructions
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="repCount"
+      >
+        Keep Count: Press Every 10 reps
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="exerciseSkip"
+      >
+        Press to Skip
+      </button>
+    </article>
+    <aside>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="extendExercise"
+      >
+        Extend Workout?
+      </button>
+      <button
+        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        type="button"
+        id="finishExercise"
+      >
+        Finish!
+      </button>
+    </aside>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/index.js"></script>
   </body>
 </html>
