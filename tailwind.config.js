@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Lombok", "sans-serif"],
+        header: ["Lombok", "sans-serif"],
+        body: ["Exo", "sans-serif"],
       },
     },
   },

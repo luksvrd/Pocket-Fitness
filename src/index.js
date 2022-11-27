@@ -1,4 +1,4 @@
-// declarations
+// declarations;
 let time;
 let NumberExercises;
 let type;
@@ -11,16 +11,16 @@ let resetTime = localStorage.getItem("resetTime");
 let repCounter;
 $("#startbutton").hide();
 $("main").hide();
-$("header div").hide();
+// $("header div").hide();
 $("article").hide();
 $("aside").hide();
 // code block for entry page
-$("#userYes").on("click", function (event) {
-  $("header div").show();
-});
-$("#userNo").on("click", function (event) {
-  $("header div").show();
-});
+// $("#userYes").on("click", function (event) {
+//   $("header div").show();
+// });
+// $("#userNo").on("click", function (event) {
+//   $("header div").show();
+// });
 $("#userNameEnter").on("click", function (event) {
   userName = $("#userName").val();
   localStorage.setItem("userName", userName);

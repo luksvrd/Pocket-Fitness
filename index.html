@@ -5,35 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css" />
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
 
     <title>Pocket Fitness</title>
   </head>
 
-  <body>
+  <body class="font-body">
     <header
-      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden"
+      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden font-header"
     >
       <div
-        class="relative z-30 rounded-xl bg-slate-400/50 p-5 text-center text-2xl"
+        class="relative z-30 mx-10 rounded-xl bg-slate-400/50 pb-5 pt-3 text-center"
       >
         <h2
-          class="decoration-3 relative z-30 p-5 text-4xl text-white underline underline-offset-4"
+          class="decoration-3 relative z-30 text-2xl text-white underline underline-offset-4 sm:text-4xl"
         >
           BE STRONG <br />
           STAY ACTIVE
         </h2>
         <h1
-          class="relative z-30 m-4 rounded-xl bg-slate-900/50 p-2 text-center text-8xl font-bold text-yellow-300"
+          class="m-4 rounded-xl bg-slate-900/50 p-2 text-5xl font-bold text-yellow-300 sm:text-8xl"
         >
           Pocket Fitness
         </h1>
         <a href="#lets-workout"
           ><button
-            class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white hover:text-yellow-300"
+            class="rounded-xl bg-slate-900/50 p-2 font-header text-lg text-white hover:text-yellow-300 sm:text-2xl"
           >
             Let's Workout !
           </button></a
@@ -46,7 +42,7 @@
         class="absolute z-10 min-h-full w-auto min-w-full max-w-none"
       >
         <source
-          src="/Fitness Cinematic video _ Gym commercial _ Cinematic fitness film _ Fitness commercial.mp4"
+          src="/Assets/Fitness Cinematic video _ Gym commercial _ Cinematic fitness film _ Fitness commercial.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
@@ -54,174 +50,236 @@
     </header>
     <div
       id="lets-workout"
-      class="border-1 m-20 flex flex-col items-center justify-center rounded-xl border-black bg-slate-300 p-5 py-2 px-4 text-center text-2xl font-bold text-black hover:bg-slate-400"
+      class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
     >
-      <h3 class="text-4xl">Are you a User?</h3>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white hover:text-green-500"
-        type="button"
-        id="userYes"
-      >
-        Yes
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white hover:text-red-500"
-        type="button"
-        id="userNo"
-      >
-        No
-      </button>
+      <h2 class="text-2xl sm:text-4xl">Are you a User?</h2>
+      <div class="flex flex-row items-center gap-4 font-body">
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white hover:text-green-500 sm:text-2xl"
+          type="button"
+          id="userYes"
+        >
+          Yes
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white hover:text-red-500 sm:text-2xl"
+          type="button"
+          id="userNo"
+        >
+          No
+        </button>
+      </div>
       <span
-        class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
+        class="relative z-30 block text-lg font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*'] sm:text-2xl"
       >
         Email
       </span>
       <input
-        class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
+        class="text-grey-darkest block w-3/4 rounded-md border border-slate-300 py-2 px-3"
         type="text"
         placeholder="UserName"
       />
       <button
         type="button"
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        class="rounded-xl bg-slate-900/50 p-1 font-body text-lg text-white sm:text-2xl"
         id="userNameEnter"
       >
         Enter Name
       </button>
     </div>
-    <main
-      class="relative z-30 flex flex-col gap-4 border-2 border-rose-500 p-5 text-center"
-    >
-      <h1>Exercises</h1>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="cardioBtn"
+    <main class="flex flex-col gap-4 p-5 text-center">
+      <div
+        id=""
+        class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
       >
-        Cardio
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="plyoBtn"
+        <h2 class="text-2xl sm:text-4xl">Exercises</h2>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="cardioBtn"
+        >
+          Cardio
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="plyoBtn"
+        >
+          Plyos
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="strengthBtn"
+        >
+          Strength
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="strongmanBtn"
+        >
+          Strongman
+        </button>
+      </div>
+      <div
+        id=""
+        class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
       >
-        Plyos
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="strengthBtn"
+        <h2 class="text-2xl sm:text-4xl">Difficulty</h2>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="beginnerBtn"
+        >
+          Beginner
+        </button>
+
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="intermediateBtn"
+        >
+          Intermediate
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="expertBtn"
+        >
+          Expert
+        </button>
+      </div>
+      <div
+        id=""
+        class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
       >
-        Strength
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="strongmanBtn"
-      >
-        Strongman
-      </button>
-      <h1>Difficulty</h1>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="beginnerBtn"
-      >
-        Beginner
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="intermediateBtn"
-      >
-        Intermediate
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="expertBtn"
-      >
-        Expert
-      </button>
-      <span
-        class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
-      >
-        Time
-      </span>
-      <input
-        class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
-        type="text"
-        id="time"
-        placeholder="minutes"
-      />
-      <span
-        class="relative z-30 block p-5 text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"
-      >
-        Number of Exercises
-      </span>
-      <input
-        class="text-grey-darkest block w-1/2 rounded-md border border-slate-300 py-2 px-3"
-        type="text"
-        id="NumberExercises"
-        placeholder="Number of Exercises"
-      />
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="searchme"
-      >
-        Create Workout!
-      </button>
+        <span
+          class="relative z-30 block text-lg font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*'] sm:text-2xl"
+        >
+          Time
+        </span>
+        <input
+          class="text-grey-darkest block w-3/4 rounded-md border border-slate-300 py-2 px-3"
+          type="text"
+          id="time"
+          placeholder="Minutes"
+        />
+        <span
+          class="relative z-30 block text-lg font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*'] sm:text-2xl"
+          >Number of Exercises
+        </span>
+        <input
+          class="text-grey-darkest block w-3/4 rounded-md border border-slate-300 py-2 px-3"
+          type="text"
+          id="NumberExercises"
+          placeholder="Number of Exercises"
+        />
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="searchme"
+        >
+          Create Workout!
+        </button>
+      </div>
     </main>
-    <button
-      class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-      type="button"
-      id="startbutton"
+    <div
+      class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
     >
-      Start
-    </button>
-    <ul></ul>
-    <article>
+      <button
+        class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+        type="button"
+        id="startbutton"
+      >
+        Start
+      </button>
+      <ul></ul>
+    </div>
+    <article
+      class="m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
+    >
       <p id="timer"></p>
       <p id="Exercise"></p>
       <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
         type="button"
         id="exerciseInstructions"
       >
         Instructions
       </button>
       <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
         type="button"
         id="repCount"
       >
         Keep Count: Press Every 10 reps
       </button>
       <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
+        class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
         type="button"
         id="exerciseSkip"
       >
         Press to Skip
       </button>
     </article>
-    <aside>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="extendExercise"
+    <footer
+      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden font-header"
+    >
+      <!-- <div
+        class="relative z-30 mx-10 rounded-xl bg-slate-400/50 pb-5 pt-3 text-center"
+      > -->
+      <!-- <h2
+        class="decoration-3 relative z-30 text-2xl text-white underline underline-offset-4 sm:text-4xl"
       >
-        Extend Workout?
-      </button>
-      <button
-        class="rounded-xl bg-slate-900/50 p-2 text-3xl text-white"
-        type="button"
-        id="finishExercise"
+        BE STRONG <br />
+        STAY ACTIVE
+      </h2> -->
+      <!-- <h1
+          class="m-4 rounded-xl bg-slate-900/50 p-2 text-5xl font-bold text-yellow-300 sm:text-8xl"
+        >
+          Pocket Fitness
+        </h1>
+        <a href="#lets-workout"
+          ><button
+            class="rounded-xl bg-slate-900/50 p-2 font-header text-lg text-white hover:text-yellow-300 sm:text-2xl"
+          >
+            Let's Workout !
+          </button></a
+        >
+      </div> -->
+      <aside
+        class="relative z-30 m-10 mx-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 bg-slate-300 pb-4 pt-3 text-center font-body hover:bg-slate-400 sm:m-40"
       >
-        Finish!
-      </button>
-    </aside>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="extendExercise"
+        >
+          Extend Workout?
+        </button>
+        <button
+          class="rounded-xl bg-slate-900/50 p-1 text-lg text-white sm:text-2xl"
+          type="button"
+          id="finishExercise"
+        >
+          Finish!
+        </button>
+      </aside>
+      <video
+        autoplay
+        loop
+        muted
+        class="absolute z-10 min-h-full w-auto min-w-full max-w-none"
+      >
+        <source
+          src="./Assets/Motion Background Loop 4K - Abstract Tunnel Vj Loop - Background Video Effects HD.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script
