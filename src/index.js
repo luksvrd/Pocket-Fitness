@@ -235,3 +235,127 @@ function saveDisplayScores(username, repcounter) {
     );
   });
 }
+// Spotify API
+clientID = "01e18a6514e94e70b15c301965a3056b";
+clientSecret = "e01e683ecf6046cf8ee28339d792413b";
+let token;
+let genre;
+let genreId;
+let playlists;
+let playlistcallnumber;
+let tracklist;
+let genrechoice;
+// clears playlist from browser display
+$("#clearplaylist").on("click", function (event) {
+  $("ol li").remove();
+});
+// each button calls the genre and chooses one randomly
+$("#HipHop").on("click", function (event) {
+  genrechoice = 1;
+  callspotify(clientID, clientSecret);
+});
+$("#Pop").on("click", function (event) {
+  genrechoice = 2;
+  callspotify(clientID, clientSecret);
+});
+$("#Training").on("click", function (event) {
+  genrechoice = 7;
+  callspotify(clientID, clientSecret);
+});
+$("#Dance").on("click", function (event) {
+  genrechoice = 9;
+  callspotify(clientID, clientSecret);
+});
+$("#Gaming").on("click", function (event) {
+  genrechoice = 19;
+  callspotify(clientID, clientSecret);
+});
+// function lists genres
+function callspotifygenre(token) {
+  console.log("yep");
+  $.ajax({
+    method: "GET",
+    url: "https://api.spotify.com/v1/browse/categories?locale=sv_US",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+    contentType: "application/json",
+    success: function (result) {
+      console.log(result);
+      genre = result.categories.items;
+      console.log(genre);
+      genreId = result.categories.items[genrechoice].id;
+      callspotifyplaylistbygenre(token, genreId);
+    },
+  });
+}
+// function lists playlist by genre
+function callspotifyplaylistbygenre(token, genreId) {
+  console.log("howdy");
+  $.ajax({
+    method: "GET",
+    url:
+      "https://api.spotify.com/v1/browse/categories/" +
+      genreId +
+      "/playlists?limit=20",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+    contentType: "application/json",
+    success: function (result) {
+      console.log(result);
+      playlists = result.playlists.items;
+      console.log(playlists);
+      playlistcallnumber =
+        result.playlists.items[
+          Math.floor(date * Math.random() * (genrechoice + date * 1000000)) % 20
+        ].id;
+      callspotifyTracksfromPlaylist(token, playlistcallnumber);
+    },
+  });
+}
+//function lists tracks from playlist and renders to page
+function callspotifyTracksfromPlaylist(token, playlistcallnumber) {
+  console.log("hi");
+  $.ajax({
+    method: "GET",
+    url:
+      "https://api.spotify.com/v1/playlists/" +
+      playlistcallnumber +
+      "/tracks?limit=20",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+    contentType: "application/json",
+    success: function (result) {
+      console.log(result);
+      tracklist = result.items;
+      console.log(tracklist);
+      tracklist.forEach(function (element) {
+        $("ol").append("<li>" + element.track.name);
+      });
+    },
+  });
+}
+// function to call token
+function callspotify(clientID, clientSecret) {
+  console.log("hello");
+  $.ajax({
+    method: "POST",
+    url: "https://accounts.spotify.com/api/token",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      Authorization: "Basic " + btoa(clientID + ":" + clientSecret),
+    },
+    data: {
+      grant_type: "client_credentials",
+    },
+    contentType: "application/json",
+    success: function (result) {
+      console.log(result);
+      token = result.access_token;
+      console.log(token);
+      callspotifygenre(token);
+    },
+  });
+}
