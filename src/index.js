@@ -18,6 +18,7 @@ $("ul").hide();
 // $("header div").hide();
 $("article").hide();
 $("aside").hide();
+$("#exerciseInstructions2").hide()
 // $("section").hide();
 // $("footer").hide();
 // code block for entry page
@@ -204,8 +205,14 @@ function displayFunction() {
     $("aside").show();
   }
   $("#Exercise").text(resultsArray[exerciseCounter].name);
-  $("#exerciseInstructions").on("click", function (event) {
-    $("#exerciseInstructions").text(resultsArray[exerciseCounter].instructions);
+  $("#exerciseInstructions2").text(resultsArray[exerciseCounter].instructions);
+  $("#exerciseInstructions1").on("click", function (event) {
+    $("#exerciseInstructions2").show();
+    $("#exerciseInstructions1").hide();
+  });
+  $("#exerciseInstructions2").on("click", function (event) {
+    $("#exerciseInstructions2").hide();
+    $("#exerciseInstructions1").show();
   });
 }
 // code block and function for high score
