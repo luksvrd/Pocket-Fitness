@@ -1,4 +1,4 @@
-// declarations;
+// declarations
 let time;
 let NumberExercises;
 let type;
@@ -7,13 +7,19 @@ let resultsArray = [];
 let date = Date.now() % 1000;
 let timePerExercise;
 let exerciseCounter = 0;
-let resetTime = localStorage.getItem("resetTime");
-let repCounter;
+let resetTime;
+let repCounter = 0;
+let highScoreStringify;
+let highScoreParse;
+let countingArray;
 $("#startbutton").hide();
 $("main").hide();
+$("ul").hide();
 // $("header div").hide();
 $("article").hide();
 $("aside").hide();
+// $("section").hide();
+// $("footer").hide();
 // code block for entry page
 // $("#userYes").on("click", function (event) {
 //   $("header div").show();
@@ -37,6 +43,7 @@ $("#searchme").on("click", function (event) {
   console.log(NumberExercises);
   $("#startbutton").show();
   $("main").hide();
+  $("ul").show();
   timeForEach(time, NumberExercises);
   callmusclefunction(type, difficulty);
 });
@@ -81,6 +88,9 @@ $("#startbutton").on("click", function (event) {
 // code block to "Extend Workout"
 $("#extendExercise").on("click", function (event) {
   $("#extendExercise").hide();
+  NumberExercises = 2;
+  callmusclefunction(type, difficulty);
+  $("#startbutton").show();
 });
 // code block to skip exercise
 $("#exerciseSkip").on("click", function (event) {
@@ -88,6 +98,41 @@ $("#exerciseSkip").on("click", function (event) {
   countdown(timePerExercise);
 });
 // code block to tally reps
+$("#repCount").on("click", function (event) {
+  repCounter = repCounter + 10;
+  $("#reps").text("Rep Count: " + repCounter);
+});
+// code block to finish exercise
+$("#finishExercise").on("click", function (event) {
+  $("aside").hide();
+  $("section").show();
+  $("#Congrats").text("Great Workout " + localStorage.getItem("userName"));
+  $("#repsFinal").text("Total Rep Count:" + repCounter);
+  saveDisplayScores(localStorage.getItem("userName", repCounter));
+  $("ul li").remove();
+});
+// code block to buyNow function
+$("#buyNow").on("click", function (event) {
+  $("section").hide();
+  localStorage.clear("userName");
+  $("header").show();
+  repCounter = 0;
+  countingArray = 0;
+  resultsArray = [];
+  exerciseCounter = 0;
+  $("#reps").text("");
+});
+// code block to reStart button
+$("#reStart").on("click", function (event) {
+  $("section").hide();
+  localStorage.clear("userName");
+  $("header").show();
+  repCounter = 0;
+  countingArray = 0;
+  resultsArray = [];
+  exerciseCounter = 0;
+  $("#reps").text("");
+});
 // function to call API
 function callmusclefunction(type, difficulty) {
   console.log("hello");
@@ -103,12 +148,12 @@ function callmusclefunction(type, difficulty) {
     success: function (result) {
       if (result.length > NumberExercises) {
         for (i = 0; i < NumberExercises; i++) {
-          let x =
+          countingArray =
             Math.floor(date * Math.random() * (i + date * 1000000)) %
             result.length;
           let resultsObject = {
-            name: result[x].name,
-            instructions: result[x].instructions,
+            name: result[countingArray].name,
+            instructions: result[countingArray].instructions,
           };
           resultsArray.push(resultsObject);
         }
@@ -130,9 +175,10 @@ function callmusclefunction(type, difficulty) {
 }
 // Function to divide time
 function timeForEach(time, NumberExercises) {
-  timePerExercise = Math.floor(time / NumberExercises) * 60;
-  localStorage.setItem("resetTime", timePerExercise);
+  timePerExercise = Math.floor((time / NumberExercises) * 60);
+  resetTime = timePerExercise;
   console.log(timePerExercise);
+  console.log(resetTime);
 }
 // function to run the timer and cycle the display function
 function countdown(timeVariable) {
@@ -145,10 +191,11 @@ function countdown(timeVariable) {
       clearInterval(timerDown);
       countdown(resetTime);
     } else if (exerciseCounter == resultsArray.length) {
+      console.log("countdowntimearray");
       clearInterval(timerDown);
     }
     displayFunction(exerciseCounter);
-  }, 200);
+  }, 150);
 }
 // function to display the exercise
 function displayFunction() {
@@ -161,20 +208,23 @@ function displayFunction() {
     $("#exerciseInstructions").text(resultsArray[exerciseCounter].instructions);
   });
 }
-// trial stuff with jquery UI
-$(function () {
-  $("#dialog").dialog({
-    autoOpen: false,
-    show: {
-      effect: "blind",
-      duration: 1000,
-    },
-    hide: {
-      effect: "explode",
-      duration: 1000,
-    },
+// code block and function for high score
+function saveDisplayScores(username, repcounter) {
+  repcounter = repCounter;
+  const highScoreSet = {
+    scoreUserName: username,
+    scoreRepCounter: repcounter,
+  };
+  let scorelist = [];
+  scorelist.push(highScoreSet);
+  console.log(highScoreSet);
+  console.log(scorelist);
+  localStorage.setItem("list", JSON.stringify(scorelist));
+  highScoreStringify = localStorage.getItem("list");
+  highScoreParse = JSON.parse(highScoreStringify);
+  highScoreParse.forEach(function (element) {
+    $("#highscore").append(
+      "<li>" + element.scoreUserName + ", " + element.scoreRepCounter
+    );
   });
-  $("#opener").on("click", function () {
-    $("#dialog").dialog("open");
-  });
-});
+}
