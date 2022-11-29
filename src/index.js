@@ -13,29 +13,29 @@ let highScoreStringify;
 let highScoreParse;
 let countingArray;
 $("#startbutton").hide();
-$("main").hide();
-$("ul").hide();
-// $("header div").hide();
+//$("main").hide();
+//$("header div").hide();
 $("article").hide();
 $("aside").hide();
-$("#exerciseInstructions2").hide()
-// $("section").hide();
-// $("footer").hide();
+$("#finals").hide();
+$("#exerciseInstructions2").hide();
+
 // code block for entry page
-// $("#userYes").on("click", function (event) {
-//   $("header div").show();
-// });
-// $("#userNo").on("click", function (event) {
-//   $("header div").show();
-// });
+/*$("#userYes").on("click", function (event) {
+  $("header div").show();
+});
+$("#userNo").on("click", function (event) {
+  $("header div").show();
+});*/
 $("#userNameEnter").on("click", function (event) {
   userName = $("#userName").val();
   localStorage.setItem("userName", userName);
   console.log(userName);
   console.log(localStorage.getItem("userName"));
-  $("main").show();
-  $("header").hide();
+  //$("main").show();
+  //$("header").hide();
 });
+
 // code block for api parameters entry screen/creates workout
 $("#searchme").on("click", function (event) {
   time = $("#time").val();
@@ -48,6 +48,7 @@ $("#searchme").on("click", function (event) {
   timeForEach(time, NumberExercises);
   callmusclefunction(type, difficulty);
 });
+// buttons for inputs for callmusclefunction
 $("#cardioBtn").on("click", function (event) {
   type = "cardio";
   console.log(type);
@@ -76,6 +77,7 @@ $("#expertBtn").on("click", function (event) {
   difficulty = "expert";
   console.log(difficulty);
 });
+
 // code block that runs the workout
 $("#startbutton").on("click", function (event) {
   console.log(resultsArray);
@@ -86,6 +88,7 @@ $("#startbutton").on("click", function (event) {
   countdown(timePerExercise);
   displayFunction();
 });
+
 // code block to "Extend Workout"
 $("#extendExercise").on("click", function (event) {
   $("#extendExercise").hide();
@@ -98,41 +101,47 @@ $("#exerciseSkip").on("click", function (event) {
   exerciseCounter++;
   countdown(timePerExercise);
 });
+
 // code block to tally reps
 $("#repCount").on("click", function (event) {
   repCounter = repCounter + 10;
   $("#reps").text("Rep Count: " + repCounter);
 });
+
 // code block to finish exercise
 $("#finishExercise").on("click", function (event) {
   $("aside").hide();
-  $("section").show();
+  $("#finals").show();
   $("#Congrats").text("Great Workout " + localStorage.getItem("userName"));
   $("#repsFinal").text("Total Rep Count:" + repCounter);
   saveDisplayScores(localStorage.getItem("userName", repCounter));
   $("ul li").remove();
 });
+
 // code block to buyNow function
 $("#buyNow").on("click", function (event) {
-  $("section").hide();
-  localStorage.clear("userName");
+  $("#finals").hide();
+  //localStorage.clear("userName");
   $("header").show();
   repCounter = 0;
   countingArray = 0;
   resultsArray = [];
   exerciseCounter = 0;
   $("#reps").text("");
+  $("main").show();
 });
+
 // code block to reStart button
 $("#reStart").on("click", function (event) {
-  $("section").hide();
-  localStorage.clear("userName");
+  $("#finals").hide();
+  //localStorage.clear("userName");
   $("header").show();
   repCounter = 0;
   countingArray = 0;
   resultsArray = [];
   exerciseCounter = 0;
   $("#reps").text("");
+  $("main").show();
 });
 // function to call API
 function callmusclefunction(type, difficulty) {
@@ -163,8 +172,9 @@ function callmusclefunction(type, difficulty) {
             "<p id='hiddenIns'>" + element.instructions + "</p>";
           $("ul").append("<li>" + element.name + "<li>" + elInstructions);
           $("li p").hide();
-          $("li").on("click", function (event) {
+          $("ul").on("click", function (event) {
             $("li p").toggle();
+            console.log(event.target);
           });
         });
       }
@@ -215,6 +225,7 @@ function displayFunction() {
     $("#exerciseInstructions1").show();
   });
 }
+
 // code block and function for high score
 function saveDisplayScores(username, repcounter) {
   repcounter = repCounter;
@@ -235,6 +246,7 @@ function saveDisplayScores(username, repcounter) {
     );
   });
 }
+
 // Spotify API
 clientID = "01e18a6514e94e70b15c301965a3056b";
 clientSecret = "e01e683ecf6046cf8ee28339d792413b";
