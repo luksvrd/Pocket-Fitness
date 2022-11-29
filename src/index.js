@@ -14,6 +14,7 @@ let highScoreParse;
 let countingArray;
 let i;
 let userName;
+let timerDown;
 $("#startbutton").hide();
 //$("main").hide();
 //$("header div").hide();
@@ -102,6 +103,7 @@ $("#extendExercise").on("click", function (event) {
 // code block to skip exercise
 $("#exerciseSkip").on("click", function (event) {
   exerciseCounter++;
+  clearInterval(timerDown);
   countdown(timePerExercise);
 });
 
@@ -197,7 +199,7 @@ function timeForEach(time, NumberExercises) {
 }
 // function to run the timer and cycle the display function
 function countdown(timeVariable) {
-  const timerDown = setInterval(function () {
+  timerDown = setInterval(function () {
     timeVariable--;
     $("#timer").text(timeVariable);
     console.log(timeVariable);
