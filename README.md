@@ -17,4 +17,4 @@ Pocket Fitness is an application/website that allows users to chose a workout on
 https://superlative-biscuit-9f6731.netlify.app/
 
 ## Screenshot
-<img width="1404" alt="Screen Shot 2022-11-28 at 9 17 16 PM" src="https://user-images.githubusercontent.com/114682284/204430283-dfaa3b73-b001-403c-8271-a93865cec6fd.png">
+<img width="1323" alt="Screen Shot 2022-11-28 at 11 41 25 PM" src="https://user-images.githubusercontent.com/114682284/204448281-d6af71f2-8ce8-4485-9475-7ca916a5d808.png">
