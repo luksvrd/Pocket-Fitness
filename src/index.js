@@ -354,6 +354,7 @@ function callspotifyTracksfromPlaylist(token, playlistcallnumber) {
       console.log(result);
       tracklist = result.items;
       console.log(tracklist);
+      $("ol li").remove();
       tracklist.forEach(function (element) {
         $("ol").append("<li>" + element.track.name);
       });
