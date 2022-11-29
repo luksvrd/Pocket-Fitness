@@ -212,7 +212,7 @@ function countdown(timeVariable) {
       clearInterval(timerDown);
     }
     displayFunction(exerciseCounter);
-  }, 150);
+  }, 1000);
 }
 // function to display the exercise
 function displayFunction() {
