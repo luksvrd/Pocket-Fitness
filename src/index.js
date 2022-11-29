@@ -19,6 +19,7 @@ $("article").hide();
 $("aside").hide();
 $("#finals").hide();
 $("#exerciseInstructions2").hide();
+$("footer").hide();
 
 // code block for entry page
 /*$("#userYes").on("click", function (event) {
@@ -112,6 +113,7 @@ $("#repCount").on("click", function (event) {
 $("#finishExercise").on("click", function (event) {
   $("aside").hide();
   $("#finals").show();
+  $("footer").show();
   $("#Congrats").text("Great Workout " + localStorage.getItem("userName"));
   $("#repsFinal").text("Total Rep Count:" + repCounter);
   saveDisplayScores(localStorage.getItem("userName", repCounter));
@@ -257,6 +259,7 @@ let playlists;
 let playlistcallnumber;
 let tracklist;
 let genrechoice;
+$("#playlistCreation").hide();
 // clears playlist from browser display
 $("#clearplaylist").on("click", function (event) {
   $("ol li").remove();
@@ -265,6 +268,7 @@ $("#clearplaylist").on("click", function (event) {
 $("#HipHop").on("click", function (event) {
   genrechoice = 1;
   callspotify(clientID, clientSecret);
+  $("#playlistCreation").show();
 });
 $("#Pop").on("click", function (event) {
   genrechoice = 2;
@@ -334,7 +338,7 @@ function callspotifyTracksfromPlaylist(token, playlistcallnumber) {
     url:
       "https://api.spotify.com/v1/playlists/" +
       playlistcallnumber +
-      "/tracks?limit=20",
+      "/tracks?limit=10",
     headers: {
       Authorization: "Bearer " + token,
     },
