@@ -12,6 +12,8 @@ let repCounter = 0;
 let highScoreStringify;
 let highScoreParse;
 let countingArray;
+let i;
+let userName;
 $("#startbutton").hide();
 //$("main").hide();
 //$("header div").hide();
@@ -250,8 +252,8 @@ function saveDisplayScores(username, repcounter) {
 }
 
 // Spotify API
-clientID = "01e18a6514e94e70b15c301965a3056b";
-clientSecret = "e01e683ecf6046cf8ee28339d792413b";
+let clientID = "01e18a6514e94e70b15c301965a3056b";
+let clientSecret = "e01e683ecf6046cf8ee28339d792413b";
 let token;
 let genre;
 let genreId;
