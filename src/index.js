@@ -263,6 +263,7 @@ $("#playlistCreation").hide();
 // clears playlist from browser display
 $("#clearplaylist").on("click", function (event) {
   $("ol li").remove();
+  $("#playlistCreation").hide();
 });
 // each button calls the genre and chooses one randomly
 $("#HipHop").on("click", function (event) {
@@ -273,18 +274,22 @@ $("#HipHop").on("click", function (event) {
 $("#Pop").on("click", function (event) {
   genrechoice = 2;
   callspotify(clientID, clientSecret);
+  $("#playlistCreation").show();
 });
 $("#Training").on("click", function (event) {
   genrechoice = 7;
   callspotify(clientID, clientSecret);
+  $("#playlistCreation").show();
 });
 $("#Dance").on("click", function (event) {
   genrechoice = 9;
   callspotify(clientID, clientSecret);
+  $("#playlistCreation").show();
 });
 $("#Gaming").on("click", function (event) {
   genrechoice = 19;
   callspotify(clientID, clientSecret);
+  $("#playlistCreation").show();
 });
 // function lists genres
 function callspotifygenre(token) {
