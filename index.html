@@ -9,45 +9,45 @@
     <title>Pocket Fitness</title>
   </head>
 
-  <body>
+  <body class="bg-slate-800">
     <header
-      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden font-header"
+      class="relative flex h-screen items-center justify-center overflow-hidden font-header"
     >
       <div
-        class="relative z-30 flex flex-row flex-wrap place-content-center gap-4 space-x-0 space-y-0 sm:space-y-4 sm:space-x-0"
+        class="relative mx-3 z-30 flex flex-row flex-wrap place-content-center gap-3 space-x-0 space-y-0 sm:space-y-4 sm:space-x-0"
       >
         <div
-          class="relative z-30 mx-10 mt-10 basis-1/2 rounded-xl bg-slate-400/50 px-4 pb-5 pt-3 text-center sm:mx-40 sm:basis-2/3 sm:flex-col"
+          class="relative z-30 basis-1/2 rounded-xl bg-slate-400/50 p-3 text-center flex flex-row md:basis-2/3 md:flex-col"
         >
           <h2
-            class="decoration-3 text-xl text-white underline underline-offset-4 sm:text-3xl"
+            class="decoration-3 p-2 text-lg text-white underline underline-offset-4 sm:text-3xl"
           >
             BE STRONG <br />
             STAY ACTIVE
           </h2>
           <h1
-            class="m-4 rounded-xl bg-slate-900/50 p-2 text-3xl font-bold text-yellow-300 sm:text-6xl"
+            class="rounded-xl bg-slate-900/50 p-2 text-2xl font-bold text-yellow-300 sm:text-6xl"
           >
             Pocket Fitness
           </h1>
         </div>
         <div
-          class="relative z-30 m-10 flex basis-1/4 flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 pb-4 pt-3 text-center font-body sm:m-40 sm:basis-1/3"
+          class="m-1.5 w-fit text-sm md:text-lg flex flex-row md:flex-col gap-2 relative z-30 items-center justify-center rounded-xl bg-slate-400/50 py-3 text-center font-body"
         >
           <span
-            class="relative z-30 block p-1 text-xl font-medium after:ml-0.5 after:text-red-500 after:content-['*'] sm:text-3xl"
+            class="relative z-30 block p-1 text-xl  font-medium after:ml-0.5 after:text-red-500 after:content-['*'] sm:text-3xl"
           >
             Enter User Name
           </span>
           <input
-            class="text-grey-darkest block w-3/4 rounded-md border border-slate-300 py-2 px-3"
+            class="text-grey-darkest block w-1/2 text-center rounded-md border border-slate-300 p-1"
             id="userName"
             type="text"
             placeholder="UserName"
           />
           <button
             type="button"
-            class="rounded-xl bg-slate-900/50 p-1.5 font-body text-lg text-white hover:bg-slate-400 hover:text-slate-900 sm:text-2xl"
+            class="rounded-xl bg-slate-900/50 mx-3 p-1.5 font-body text-white hover:bg-slate-400 hover:text-slate-900"
             id="userNameEnter"
           >
             Enter Name
@@ -55,50 +55,50 @@
         </div>
         <section
           id="spotifyAssets"
-          class="relative z-30 m-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 pb-4 pt-3 text-center font-body sm:m-40"
+          class="relative z-30 flex flex-col w-fit items-center justify-center rounded-xl bg-slate-400/50 py-3 px-2 text-center font-body"
         >
-          <h2 class="text-2xl sm:text-4xl">Create a Spotify Playlist</h2>
-          <h3 class="p-1 text-xl sm:text-3xl">Choose Genre:</h3>
+          <h2 class="text-xl sm:text-3xl">Create a Spotify Playlist</h2>
+          <h3 class="p-1 text-lg sm:text-2xl">Choose Genre:</h3>
           <div
-            class="relative z-30 m-3 grid grid-cols-3 gap-3 rounded-xl text-center font-body"
+            class="relative z-30 mx-3 w-fit text-sm md:text-lg grid grid-cols-2 gap-3 rounded-xl text-center font-body"
           >
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="HipHop"
             >
               HipHop
             </button>
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="Pop"
             >
               Pop
             </button>
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="Training"
             >
               Training
             </button>
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="Dance"
             >
               Dance
             </button>
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="Gaming"
             >
               Gaming
             </button>
             <button
-              class="rounded-xl bg-slate-900/50 p-1 text-base text-white hover:text-green-500 md:text-lg"
+              class="rounded-xl bg-slate-900/50 p-1 text-white hover:text-green-500"
               type="button"
               id="clearplaylist"
             >
@@ -108,7 +108,7 @@
         </section>
         <ol
           id="playlistCreation"
-          class="relative z-20 basis-1/4 rounded-xl bg-slate-400/50 p-3 pb-5 pt-3 text-center font-body sm:basis-1/3"
+          class="relative z-30 w-fit text-xs md:text-base rounded-xl bg-slate-400/50 py-1 px-1 text-center font-body"
         ></ol>
       </div>
       <video
@@ -126,7 +126,7 @@
     </header>
 
     <main
-      class="flex flex-row flex-wrap items-center gap-4 p-5 text-center md:flex-col"
+      class="flex flex-col place-content-center gap-6 p-5 text-center md:flex-row"
     >
       <div
         class="flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 px-6 pb-4 pt-3 text-center font-body"
@@ -222,11 +222,11 @@
       </div>
     </main>
     <div
-      class="flex flex-row flex-wrap items-center gap-4 p-5 text-center md:flex-col"
+      class="flex flex-col items-center gap-4 p-5 text-center md:flex-col"
     >
       <div
         id="startbutton"
-        class="flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 px-6 pb-4 pt-3 text-center font-body"
+        class="flex items-center justify-center gap-2 rounded-xl bg-slate-400/50 px-6 pb-4 pt-3 text-center font-body"
       >
         <button
           class="rounded-xl bg-slate-900/50 p-1.5 font-body text-lg text-white hover:bg-slate-400 hover:text-slate-900 sm:text-2xl"
@@ -238,7 +238,7 @@
       </div>
     </div>
     <div
-      class="flex flex-row flex-wrap items-center gap-4 p-5 text-center md:flex-col"
+      class="flex flex-col items-center gap-4 p-5 text-center md:flex-col"
     >
     <article
       class="flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50 px-6 pb-4 pt-3 text-center font-body"
@@ -294,7 +294,7 @@
       </button>
     </aside>
     <footer
-      class="relative mb-12 flex h-screen items-center justify-center overflow-hidden font-header"
+      class="flex h-screen items-center justify-center overflow-hidden font-header"
     >
       <section
         class="relative z-30 mx-10 flex flex-col items-center justify-center gap-4 rounded-xl bg-slate-400/50  p-4 pt-3 text-center font-body sm:mx-80"
