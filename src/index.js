@@ -135,6 +135,7 @@ $("#buyNow").on("click", function (event) {
   exerciseCounter = 0;
   $("#reps").text("");
   $("main").show();
+  $("footer").hide();
 });
 
 // code block to reStart button
@@ -148,6 +149,7 @@ $("#reStart").on("click", function (event) {
   exerciseCounter = 0;
   $("#reps").text("");
   $("main").show();
+  $("footer").hide();
 });
 // function to call API
 function callmusclefunction(type, difficulty) {
